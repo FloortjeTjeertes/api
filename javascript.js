@@ -11,8 +11,8 @@ weerButton2.addEventListener('click', getWeather2);
 
 //overige vars
 let apiAddress = "http://weerlive.nl/api/json-data-10min.php?key="; //address
-//let key = "demo";
-let key = "77f9e00dfd"; //api key van docent
+let key = "demo";
+// let key = "77f9e00dfd"; //api key van docent
 let locatie="&locatie=";
 //let geoLocatie= "52.391225, 4,856799"; //longitude lattitude als locatie
 let geoLocatie ="Amsterdam";
