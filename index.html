@@ -3,8 +3,8 @@
     <meta charset="utf-8">
     <mets name="author" content="jouw naam en klas">
     <title>weer api opdracht</title>
-    <link rel="stylesheet" hreff="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-   <link rel="stylesheet" hreff="css.css">
+     <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   </head>
   <body>
 <div class='wrapper'>
@@ -17,8 +17,16 @@
 <br>
 <div id="weatherHere"></div>
   </div>
-  <div class="ticker-wrap"></div>
+  <!-- tickertape -->
+
+  <div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker__item"> <div id="tikerweer"></div></div>
+  </div>
+  </div>
+  <!-- einde tickertape -->
     <script src="ajax.js"></script>
   <script src="javascript.js"></script>
+
   </body>
 </html>
