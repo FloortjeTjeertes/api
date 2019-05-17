@@ -8,6 +8,7 @@ let weatherTickerTape = document.getElementById('weatherTickerTape');
 let weatherHere = document.getElementById('weatherHere');
 let completeWeatherHere = document.getElementById('completeWeatherHere');
 let tikerweer = document.getElementById('tikerweer');
+let tikeradd = document.getElementById('tikeradd');
 
 weerButton.addEventListener('click', getWeather);
 weerButton2.addEventListener('click', getWeather2);
@@ -23,19 +24,6 @@ let geoLocatie ="Amsterdam";
 let url = apiAddress + key + locatie + geoLocatie;
 
 //function
-function showWeather(weatherString){
-  let weatherObject = JSON.parse(weatherString);
-  let ditweer  =
-  weatherObject.liveweer[0].plaats +
-  "<br> tempratuur "+
-  weatherObject.liveweer[0].temp + "&#176;C" +
-  "<br> Verwachting" +
- weatherObject.liveweer[0].image +
- '<img src="iconen-weerlive/'+ weatherObject.liveweer[0].image + '.png">';
-
-weatherHere.innerHTML = ditweer;
-}
-
 
 //function showWeather2
 function showWeather2(weatherString) {
@@ -62,17 +50,26 @@ function getWeather(){
 }
 
 function showWeather3(weatherString){
-  console.log("showt weer");
   let weatherObject = JSON.parse(weatherString);
-  let completeData = "";
-  console.log("complete data is leeg");
-  for (const [key, value] of Object.entries(weatherObject.liveweer[0])) {
-    debug ? console.log(`${key}: ${value}`) : ""; //debug naar console
-    completeData +=  key+ "  " + " : " + value ; //maak String
-    console.log("compleet data is af" + completeData);
-    tikerweer.innerHTML =completeData; //string printen in bro
-  }
+  let ditweer  =
+  weatherObject.liveweer[0].plaats +
+  " tempratuur "+
+  weatherObject.liveweer[0].temp + " &#176;C " +
+  " Verwachting" +
+ weatherObject.liveweer[0].image +
+ ' <img class="weerplaatje" src="iconen-weerlive/'+ weatherObject.liveweer[0].image + '.png">';
+
+ var adds =["KOOP NU ZOOLOZE SCHOENEN <i>altijd last van spijkers in je zool? nooit meer versleten zolen dan is dit de oplossing!</i>ZOOLOZE SCHOENEN $200,95","<i>duizende programmers zitten te zwoegen op slechte macbooks, ze hebben bijna niks en wonen in kleine vilaas</i>STEUN<i>en u red een programmer in nood</i>","<b>hier adverteren? betaal dan nu 10euro per maand</b>"];
+ let i = 0;
+tikeradd.innerHTML= adds[i];
+tikerweer.innerHTML = ditweer;
+console.log("plus"+ adds[i]);
+i++;
+
+
 }
+
+
 function getWeather3(){
   console.log("function3 werkt");
   tikerweer.innerHTML = "";
